@@ -1,26 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Etch-a-sketch</title>
- <link rel="stylesheet" href="styles.css">
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Etch-a-sketch</title>
+   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
- <div class="overlayCont">
-  <div class="header">
+   <div class="overlayContainer">
+      <header>
 
-  </div>
-  <div class="sliderAndValue">
-   <input type="range" min="2" max="100" value="16" id="slider">
-   <p class="value">16</p>
-</div>
+      </header>
 
-<div class="grid"></div>
- 
+      <div class="content">
+         <h1><i>ETCH-A-SKETCH</i></h1>
+         <div class="menu">
 
- </div>
- <script src="script.js"></script>
+            <label for="slider">Select a value:</label>
+<input type="range" id="slider" name="slider" min="16" max="625" step="1" list="values">
+<datalist id="values">
+  <option value="16">
+  <option value="64">
+  <option value="169">
+  <option value="225">
+  <option value="361">
+  <option value="400">
+  <option value="625">
+</datalist>
+
+
+         </div>
+
+         <div class="container"></div>
+      </div>
+
+
+      <footer>
+
+      </footer>
+   </div>
+
+   <script src="script.js"></script>
 </body>
+
 </html>

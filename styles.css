@@ -1,67 +1,27 @@
-body{
- background-color: coral;
-}
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 500px;
+    border: 1px solid black;
+  }
+  
+  .square {
+    box-sizing: border-box;
+    border: 1px solid black;
+  }
+  
 
-
-
-.sliderAndValue{
- display: flex;
- flex-direction: row;
- justify-content: center;
- align-items: center; 
-}
-
-#slider{
- -webkit-appearance: none;
- background: black;
- outline: none;
- border-radius: 50px;
-}
-
-#slider::-webkit-slider-thumb {
- -webkit-appearance: none; 
- width: 25px; 
- height: 25px; 
- background: white; 
- border-radius: 50px;
-}
-
-#slider::-moz-range-thumb{
- width: 25px; 
- height: 25px; 
- background: white; 
- border-radius: 50px;
-}
-
-.value{
- font-size: 30px;
- padding-left: 10px;
- color: black;
- text-shadow: 2px 2px white;
-
-}
-
-.grid{
- margin-top: 50px;
- display: inline-grid;
- grid-template-columns: repeat(16, 2fr);
- grid-template-rows: repeat(16, 2fr);
- border: 5px solid white;
- border-radius: 5px;
- height: 575px;
- width: 575px;
- background-color: gray;
- box-shadow: 10px 10px;
-}
-
-.cell{
- background-color: white;
- border: 1px solid black;
-}
-
-footer{
- font-size: 25px;
- bottom: 0;
- justify-content: center;
- padding-top: 50px;
-}
+  body {
+   
+    padding: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+    max-width: 800px;
+    max-height: 800px;
+    margin: auto;
+  }
+ 
