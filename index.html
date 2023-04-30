@@ -12,35 +12,41 @@
 <body>
    <div class="overlayContainer">
       <header>
+         <div class="logo">ETCH-A-SKETCH</div>
+         <nav>
+             <a href="https://github.com/sdooodly" target="_blank" class="icon github-icon"></a>
 
-      </header>
+             <a href="https://www.linkedin.com/in/gayathri-gireesh-sujatha" target="_blank"
+                 class="icon linkedin-icon"></a>
+             <a href="mailto:gayathrigs@outlook.com" class="icon gmail-icon"></a>
+
+
+
+         </nav>
+     </header>
 
       <div class="content">
          <h1><i>ETCH-A-SKETCH</i></h1>
          <div class="menu">
-
+            <label for="color-picker">Choose a color:</label>
+            <input type="color" id="color-picker">
+         
             <label for="slider">Select a value:</label>
-<input type="range" id="slider" name="slider" min="16" max="625" step="1" list="values">
-<datalist id="values">
-  <option value="16">
-  <option value="64">
-  <option value="169">
-  <option value="225">
-  <option value="361">
-  <option value="400">
-  <option value="625">
-</datalist>
-
-
+            <input type="range" id="slider" name="slider" min="4" max="50" value="2">
+         
+            <button id="warm-btn">Warm Colors</button>
+            <button id="cool-btn">Cool Colors</button>
+            <button id="noir-btn">Noir Colors</button>
          </div>
+         
 
          <div class="container"></div>
       </div>
 
 
       <footer>
-
-      </footer>
+         <h13>Copyright &copy The Odin Project 2023</h13>
+     </footer>
    </div>
 
    <script src="script.js"></script>
