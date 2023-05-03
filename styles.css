@@ -4,6 +4,7 @@ body {
   background-position: center;
   background-attachment: fixed;
   height: 100vh;
+  margin:0;
 }
 
 .overlayContainer{
@@ -99,6 +100,7 @@ header {
   padding: 0;
   align-items: center;
   margin: 0;
+  padding: 3px;
 }
 
 

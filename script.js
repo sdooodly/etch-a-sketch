@@ -76,6 +76,19 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       });
 
+      // container.addEventListener('mousemove', (event) => {
+      //   if (isMouseDown) {
+      //     const squares = document.querySelectorAll('.square');
+      //     squares.forEach((square) => {
+      //       if (event.target === square && !coloredSquares.includes(square)) {
+      //         square.style.backgroundColor = colorPicker.value;
+      //         coloredSquares.push(square);
+      //       }
+      //     });
+      //   }
+      // });
+      
+
       square.addEventListener('mouseup', () => {
         isMouseDown = false;
       });
