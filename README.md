@@ -11,3 +11,4 @@ To-Do
 -Randomize warm, cool and noir
 -Colour picker is so basic. Use the normal hex
 -Colour should change on prolonged click, not just new clicks
+-Refactor!!!
