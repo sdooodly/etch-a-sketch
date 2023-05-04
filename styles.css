@@ -52,17 +52,13 @@ body {
   background-color: var(--bg-color);
 }
 
-.square:hover,
-.square:focus {
-  background-color: red !important;
-  outline: none; 
-}
 
 /* New styles for buttons */
 .menu {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   margin-top: 20px;
+  margin: 50px;
 }
 
 .btn {
