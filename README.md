@@ -12,3 +12,6 @@ To-Do
 -Colour picker is so basic. Use the normal hex
 -Colour should change on prolonged click, not just new clicks
 -Refactor!!!
+
+04/05/2023
+-Colour checker, wrto browser silly
