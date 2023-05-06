@@ -15,7 +15,6 @@
          <div class="logo">ETCH-A-SKETCH</div>
          <nav>
             <a href="https://github.com/sdooodly" target="_blank" class="icon github-icon"></a>
-
             <a href="https://www.linkedin.com/in/gayathri-gireesh-sujatha" target="_blank"
                class="icon linkedin-icon"></a>
             <a href="mailto:gayathrigs@outlook.com" class="icon gmail-icon"></a>
@@ -23,15 +22,27 @@
       </header>
 
       <div class="content">
-         <h1><i>ETCH-A-SKETCH</i></h1>
+         <h1><em><strong>ETCH-A-SKETCH</strong></em></h1>
          <div class="menu">
             <input type="color" id="color-picker" />
+            <div class="colourOptions">
+               <button id="warm-btn">WARM</button>
+               <button id="cool-btn">COOL</button>
+               <button id="noir-btn">NOIR</button>
+            </div>
             <input type="range" id="slider" name="slider" min="4" max="77" value="10" />
+            <div class="rangeOptions">
+
+               <button id="ten">10*10</button>
+               <button id="fifty">50*50</button>
+               <button id="sevrntyFive">75*75</button>
+            </div>
+            <br />
+            <input type="checkbox" id="hover-checkbox" />
+            <label for="hover-checkbox">Change color on hover</label>
+            <br />
 
 
-            <button id="warm-btn">WARM</button>
-            <button id="cool-btn">COOL</button>
-            <button id="noir-btn">NOIR</button>
          </div>
 
          <div class="container"></div>
