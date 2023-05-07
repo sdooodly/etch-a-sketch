@@ -39,7 +39,7 @@ body {
     text-shadow: 0 0 7px #000000;
     border: none;
     box-shadow: 0 0 5px #000000, 0 0 5px #000000 inset;
-    transition: all .3s ease-in;
+    transition: all 0.3s ease-in;
 }
 
 .diamond {
@@ -52,14 +52,13 @@ body {
     border: none;
     border-radius: 0% 50% 0% 50%;
     box-shadow: 0 0 10px #000000, 0 0 10px #000000 inset;
-    transition: all .3s ease-in;
+    transition: all 0.3s ease-in;
 }
 
-
-
-@media (min-width: 768px) {
+@media (min-width: 767px) {
     .content {
-        width: 75%;
+        width: 100%;
+        padding: 10px;
     }
 }
 
@@ -84,15 +83,10 @@ body {
     background-color: rgb(0, 0, 0);
 }
 
-
-
 .square {
-
     background-color: rgb(0, 0, 0);
     box-sizing: border-box;
     border: 1px solid rgba(255, 248, 248, 0.316);
-
-
 }
 
 /* 
@@ -110,7 +104,6 @@ header {
     padding: 3px;
 }
 
-
 header {
     justify-content: space-between;
 }
@@ -120,7 +113,7 @@ footer {
     position: fixed;
     bottom: 0;
     left: 0;
-    width: 100%
+    width: 100%;
 }
 
 .navi {
@@ -138,11 +131,9 @@ footer {
     background-size: contain;
 }
 
-
 .linkedin-icon {
     background-image: url("https://www.linkedin.com/favicon.ico");
 }
-
 
 .github-icon {
     background-image: url("https://github.com/favicon.ico");

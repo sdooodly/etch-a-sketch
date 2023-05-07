@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const b_one = document.querySelector(".grid-10");
     const b_two = document.querySelector(".grid-20");
     const b_three = document.querySelector(".grid-30");
+    const erase = document.querySelector(".erase")
 
 
 
@@ -75,10 +76,18 @@ document.addEventListener("DOMContentLoaded", function() {
         document.body.style.backgroundColor = selectedColor;
     });
 
+    erase.addEventListener("click", function() {
+        const selectedColor = "#000000";
+        colorPicker.value = selectedColor;
+        document.body.style.backgroundColor = selectedColor;
+    });
+
     colorPicker.addEventListener("change", function() {
         const selectedColor = colorPicker.value;
         document.body.style.backgroundColor = selectedColor;
     });
+
+
 
 
     b_one.addEventListener("click", function() {
