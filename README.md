@@ -4,6 +4,7 @@ A digital incarnation of the classic toy.
 
 Live preview of etch-a-sketch application:
 [etch-a-sketch](https://sdooodly.github.io/etch-a-sketch/)
+![A screenshot of etch-a-sketch](./screenshot.png)
 
 Use the command below to clone this repo! 
 ```bash
