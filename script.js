@@ -1,173 +1,156 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const slider = document.getElementById("slider");
-  const container = document.querySelector(".container");
-  let isMouseDown = false;
-  let coloredSquares = [];
+document.addEventListener("DOMContentLoaded", function() {
+    //const slider = document.getElementById("slider");
+    const container = document.querySelector(".container");
+    let isMouseDown = false;
+    let coloredSquares = [];
 
-  const colorPicker = document.getElementById("color-picker");
-  const warmButton = document.getElementById("warm-btn");
-  const coolButton = document.getElementById("cool-btn");
-  const noirButton = document.getElementById("noir-btn");
+    const colorPicker = document.getElementById("color-picker");
+    const warmButton = document.querySelector(".warm");
+    const coolButton = document.querySelector(".cold");
+    const noirButton = document.querySelector(".noir");
+    const b_one = document.querySelector(".grid-10");
+    const b_two = document.querySelector(".grid-20");
+    const b_three = document.querySelector(".grid-30");
 
 
-  const warmColors = [
-    "#FF5733",
-    "#FF8C00",
-    "#FFC300",
-    "#F7DC6F",
-    "#F1C40F",
-    "#FF7F50",
-    "#FFA07A",
-    "#FFDAB9",
-    "#CD5C5C",
-    "#FF4500",
-    "#D2691E",
-    "#8B0000",
-    "#FF6347",
-    "#FFA500",
-    "#FFE4B5",
-    "#B22222",
-    "#FF8F00",
-    "#FFD700",
-    "#FFFF00",
-    "#F0E68C",
-    "#DAA520",
-    "#FF1493",
-    "#FF69B4",
-    "#FFC0CB",
-    "#DB7093",
-  ];
-  const coolColors = [
-    "#85C1E9",
-    "#5DADE2",
-    "#1ABC9C",
-    "#48C9B0",
-    "#17A589",
-    "#2980B9",
-    "#3498DB",
-    "#BDC3C7",
-    "#2C3E50",
-    "#34495E",
-    "#1E90FF",
-    "#87CEFA",
-    "#87CEEB",
-    "#00BFFF",
-    "#ADD8E6",
-    "#87CEFA",
-    "#4682B4",
-    "#6A5ACD",
-    "#7B68EE",
-    "#9400D3",
-    "#BA55D3",
-    "#DA70D6",
-    "#FFB6C1",
-    "#FFC0CB",
-    "#E6E6FA",
-  ];
-  const noirColors = [
-    "#424949",
-    "#616A6B",
-    "#7B7D7D",
-    "#AEB6BF",
-    "#D5D8DC",
-    "#1C2833",
-    "#34495E",
-    "#283747",
-    "#212F3D",
-    "#2C3E50",
-    "#566573",
-    "#808B96",
-    "#95A5A6",
-    "#BDC3C7",
-    "#DADFE1",
-    "#F2F3F4",
-    "#839192",
-    "#BFBFBF",
-    "#F5F5F5",
-    "#17202A",
-    "#212F3D",
-    "#2C3E50",
-    "#273746",
-    "#2C3E50",
-    "#2E4053",
-  ];
- 
-  
+
+
+    const warmColors = [
+        "#FF5733",
+        "#FFA07A",
+        "#FF7F50",
+        "#FF6347",
+        "#FF4500",
+        "#FF8C00",
+        "#FF7256",
+        "#FFA500",
+        "#FFA07A",
+        "#FF8C00"
+    ];
+    const coolColors = [
+        "#007F7F",
+        "#008080",
+        "#008B8B",
+        "#00BFFF",
+        "#00CED1",
+        "#00FA9A",
+        "#00FF7F",
+        "#00FF00",
+        "#7FFFD4",
+        "#66CDAA"
+    ];
+    const noirColors = [
+        "#222222",
+        "#333333",
+        "#444444",
+        "#555555",
+        "#666666",
+        "#777777",
+        "#888888",
+        "#999999",
+        "#aaaaaa",
+        "#bbbbbb"
+    ];
+
+
     function getRandomColor(colors) {
-      return colors[Math.floor(Math.random() * colors.length)];
+        return colors[Math.floor(Math.random() * colors.length)];
     }
-  
-    warmButton.addEventListener("click", function () {
-      const selectedColor = getRandomColor(warmColors);
-      colorPicker.value = selectedColor;
-      document.body.style.backgroundColor = selectedColor;
+
+    warmButton.addEventListener("click", function() {
+        const selectedColor = getRandomColor(warmColors);
+        colorPicker.value = selectedColor;
+        document.body.style.backgroundColor = selectedColor;
     });
-  
-    coolButton.addEventListener("click", function () {
-      const selectedColor = getRandomColor(coolColors);
-      colorPicker.value = selectedColor;
-      document.body.style.backgroundColor = selectedColor;
+
+    coolButton.addEventListener("click", function() {
+        const selectedColor = getRandomColor(coolColors);
+        colorPicker.value = selectedColor;
+        document.body.style.backgroundColor = selectedColor;
     });
-  
-    noirButton.addEventListener("click", function () {
-      const selectedColor = getRandomColor(noirColors);
-      colorPicker.value = selectedColor;
-      document.body.style.backgroundColor = selectedColor;
+
+    noirButton.addEventListener("click", function() {
+        const selectedColor = getRandomColor(noirColors);
+        colorPicker.value = selectedColor;
+        document.body.style.backgroundColor = selectedColor;
     });
-  
-    colorPicker.addEventListener("change", function () {
-      const selectedColor = colorPicker.value;
-      document.body.style.backgroundColor = selectedColor;
+
+    colorPicker.addEventListener("change", function() {
+        const selectedColor = colorPicker.value;
+        document.body.style.backgroundColor = selectedColor;
     });
-  
-    slider.addEventListener("input", function () {
-      const selectedValue = slider.value * slider.value;
-      const squareRoot = Math.sqrt(selectedValue);
-      const squaresPerRow = Math.floor(squareRoot);
-      const squaresPerColumn = Math.ceil(squareRoot);
-  
-      // Clear the container before adding new squares
-      container.innerHTML = "";
-      coloredSquares = [];
-  
-      // Calculate the size of each square
-      const squareWidth = 500 / squaresPerRow;
-      const squareHeight = 500 / squaresPerColumn;
-  
-      // Add new squares to the container
-      for (let i = 0; i < selectedValue; i++) {
-        const square = document.createElement("div");
-        square.classList.add("square");
-        square.style.width = `${squareWidth}px`;
-        square.style.height = `${squareHeight}px`;
-        container.appendChild(square);
-  
-        // Add event listeners to each square
-        square.addEventListener("mousedown", () => {
-          if (!document.getElementById("hover-checkbox").checked) {
-            square.style.backgroundColor = colorPicker.value;
-          }
-          isMouseDown = true;
-          coloredSquares.push(square);
-        });
-  
-        square.addEventListener("mousemove", () => {
-          if (isMouseDown && !coloredSquares.includes(square)) {
-            if (document.getElementById("hover-checkbox").checked) {
-              square.style.backgroundColor = colorPicker.value;
-            }
-            coloredSquares.push(square);
-          }
-        });
-  
-        square.addEventListener("mouseup", () => {
-          isMouseDown = false;
-        });
-  
-        square.addEventListener("mouseleave", () => {
-          isMouseDown = false;
-        });
-      }
-    });
-  });
-  
+
+
+    b_one.addEventListener("click", function() {
+        container.innerHTML = "";
+        coloredSquares = [];
+        addSquare(10);
+    })
+
+    b_two.addEventListener("click", function() {
+        container.innerHTML = "";
+        coloredSquares = [];
+        addSquare(20);
+    })
+    b_three.addEventListener("click", function() {
+        container.innerHTML = "";
+        coloredSquares = [];
+        addSquare(30);
+    })
+
+    const addSquare = (input) => {
+        for (let i = 0; i < (input * input); i++) {
+            const squareWidth = 500 / input;
+            const squareHeight = 500 / input;
+            const square = document.createElement("div");
+            square.classList.add("square");
+            square.style.width = `${squareWidth}px`;
+            square.style.height = `${squareHeight}px`;
+            container.appendChild(square);
+
+            square.addEventListener("mouseover", function() {
+                if (isMouseDown) {
+                    square.style.backgroundColor = colorPicker.value;
+                    coloredSquares.push(square);
+                }
+            });
+
+            square.addEventListener("mousedown", function() {
+                isMouseDown = true;
+                square.style.backgroundColor = colorPicker.value;
+                coloredSquares.push(square);
+            });
+
+            square.addEventListener("mouseup", function() {
+                isMouseDown = false;
+            });
+        }
+    }
+
+
+
+});
+
+// //figure out
+// const generateRandomColor = (string) => {
+//     if (string === 'warm') {
+//         // Generate a warm color
+//         const hue = Math.floor(Math.random() * 41) + 10; // 10-50 (red-orange to yellow)
+//         const saturation = Math.floor(Math.random() * 51) + 50; // 50-100 (more vivid)
+//         const lightness = Math.floor(Math.random() * 41) + 40; // 40-80 (light to dark)
+//         return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+//     } else if (string === 'cool') {
+//         // Generate a cool color
+//         const hue = 205; // Blue hue
+//         const saturation = Math.floor(Math.random() * 31) + 70; // 70-100 (less vivid)
+//         const lightness = Math.floor(Math.random() * 41) + 40; // 40-80 (light to dark)
+//         return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
+//     } else if (string === 'noir') {
+//         // Generate a random gray color
+//         const shade = Math.floor(Math.random() * 81) + 10; // 10-90 (light to dark)
+//         return `rgb(${shade}, ${shade}, ${shade})`;
+//     } else {
+//         // Default to black
+//         return '#000000';
+//     }
+// }

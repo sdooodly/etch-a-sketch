@@ -15,3 +15,10 @@ To-Do
 
 04/05/2023
 -Colour checker, wrto browser silly
+
+07/05/2023
+Changed the whole lot, taken from eas-clone branch: https://github.com/sdooodly/eas-clone
+
+-Default number of grids should be present
+-Automate colour generation with a function
+-Random colour for every new square
