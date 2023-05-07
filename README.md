@@ -36,7 +36,7 @@ Photo by [Bence Balla-Schottner](https://unsplash.com/fr/@ballaschottner?utm_sou
 - Colour checker, wrto browser, silly
 
 ### 07/05/2023
-#### Changelog
+#### Change log
 - Changed the whole lot, taken from eas-clone branch: https://github.com/sdooodly/eas-clone
 #### To-Do
 - Default number of grids should be present
