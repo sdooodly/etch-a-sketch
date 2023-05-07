@@ -57,9 +57,11 @@ body {
 
 
 
-@media (min-width: 768px) {
+
+@media (min-width: 767px) {
     .content {
-        width: 75%;
+        width: 100%;
+        padding: 10px;
     }
 }
 
