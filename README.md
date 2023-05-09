@@ -43,6 +43,10 @@ Photo by [Bence Balla-Schottner](https://unsplash.com/fr/@ballaschottner?utm_sou
 - Automate colour generation with a function
 - Random colour for every new square
 
+### 07/05/2023
+#### Change log
+- Change screenshot cus Itachi's sharingan is wrong :/
+
 
 
 
