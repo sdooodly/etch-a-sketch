@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function() {
     b_three.addEventListener("click", function() {
         container.innerHTML = "";
         coloredSquares = [];
-        addSquare(30);
+        addSquare(50);
     })
 
     const addSquare = (input) => {
