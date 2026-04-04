@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="An interactive Etch-a-Sketch drawing app" />
     <title>Etch-a-sketch</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -12,42 +13,52 @@
     <header>
       <div class="logo">ETCH-A-SKETCH</div>
       <nav>
-        <a
-          href="https://github.com/sdooodly"
-          target="_blank"
-          class="icon github-icon"
-        ></a>
-        <a
-          href="https://www.linkedin.com/in/gayathri-gireesh-sujatha"
-          target="_blank"
-          class="icon linkedin-icon"
-        ></a>
-        <a href="mailto:gayathrigs@outlook.com" class="icon gmail-icon"></a>
+        <a href="https://github.com/sdooodly" target="_blank" rel="noopener noreferrer"
+          class="icon github-icon" aria-label="GitHub profile"></a>
+        <a href="https://www.linkedin.com/in/gayathri-gireesh-sujatha" target="_blank"
+          rel="noopener noreferrer" class="icon linkedin-icon" aria-label="LinkedIn profile"></a>
+        <a href="mailto:gayathrigs@outlook.com" class="icon gmail-icon" aria-label="Send email"></a>
       </nav>
     </header>
 
-    <div class="content">
-      <h1>
-        <em><strong>ETCH-A-SKETCH</strong></em>
-      </h1>
+    <main class="content">
+      <h1>ETCH-A-SKETCH</h1>
+
       <div class="menu">
+        <!-- Color modes -->
         <div class="color-button">
-          <input type="color" id="color-picker" class="rectangle" />
-          <button type="button" id="bten" class="warm rectangle">Warm</button>
-          <button type="button" class="cold rectangle">Cold</button>
-          <button type="button" class="noir rectangle">Noir</button>
+          <input type="color" id="color-picker" class="rectangle" aria-label="Pick a color" />
+          <button type="button" class="mode-btn warm rectangle" data-mode="color">Warm</button>
+          <button type="button" class="mode-btn cold rectangle" data-mode="color">Cold</button>
+          <button type="button" class="mode-btn noir rectangle" data-mode="color">Noir</button>
+          <button type="button" class="mode-btn rainbow rectangle" data-mode="rainbow">Rainbow</button>
         </div>
-        <div class="grid-buttons">
-          <button type="button" class="grid-10 diamond">10x10</button>
-          <button type="button" class="grid-20 diamond">20x20</button>
-          <button type="button" class="grid-30 diamond">50x50</button>
+
+        <!-- Draw modes -->
+        <div class="draw-modes">
+          <button type="button" class="mode-btn draw-mode diamond active" data-mode="draw">Draw</button>
+          <button type="button" class="mode-btn draw-mode diamond" data-mode="darken">Darken</button>
+          <button type="button" class="mode-btn draw-mode diamond" data-mode="lighten">Lighten</button>
+          <button type="button" class="mode-btn draw-mode diamond" data-mode="eraser">Eraser</button>
+        </div>
+
+        <!-- Grid size slider -->
+        <div class="slider-group">
+          <label for="grid-slider">Grid: <span id="grid-size-label">16</span>×<span id="grid-size-label2">16</span></label>
+          <input type="range" id="grid-slider" min="2" max="64" value="16" aria-label="Grid size" />
+        </div>
+
+        <!-- Actions -->
+        <div class="action-buttons">
+          <button type="button" class="action-btn" id="btn-clear" title="Clear canvas">🗑 Clear</button>
+          <button type="button" class="action-btn" id="btn-undo" title="Undo last stroke">↩ Undo</button>
+          <button type="button" class="action-btn" id="btn-grid-toggle" title="Toggle grid lines">▦ Grid</button>
+          <button type="button" class="action-btn" id="btn-download" title="Download as image">⬇ Save</button>
         </div>
       </div>
-      <div class="container"></div>
-      <div class="grid-buttons">
-        <button type="button" class="erase diamond">ERASE</button>
-      </div>
-    </div>
+
+      <div class="container" id="canvas-container" role="img" aria-label="Drawing canvas"></div>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
